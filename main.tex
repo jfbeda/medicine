@@ -1,0 +1,100 @@
+% !TEX TS-program = xelatex
+
+\documentclass[
+    10pt,
+    a5paper,
+    twoside,
+    openany
+]{book}
+
+% -------------------------------------------------
+% Book information
+% -------------------------------------------------
+
+\newcommand{\booktitle}{Medicine}
+\newcommand{\booksubtitle}{}
+\newcommand{\bookauthor}{Jack Beda}
+\newcommand{\bookinstitution}{}
+\newcommand{\bookedition}{Compiled \today}
+
+% -------------------------------------------------
+% Formatting
+% -------------------------------------------------
+
+\usepackage{formatting}
+
+\hypersetup{
+    pdftitle={\booktitle},
+    pdfauthor={\bookauthor},
+    pdfsubject={Medicine course notes},
+    pdfkeywords={medicine, medical notes, revision, handbook}
+}
+
+% LaTeX will look in these folders when loading images.
+\graphicspath{
+    {images/}
+    {chapters/images/}
+}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+% -------------------------------------------------
+% Front matter
+% -------------------------------------------------
+
+\frontmatter
+
+\input{title}
+
+\pagestyle{notes}
+\clearpage
+
+\tableofcontents
+
+\clearpage
+\input{chapters/00-introduction}
+
+% -------------------------------------------------
+% Main chapters
+% -------------------------------------------------
+
+\mainmatter
+\pagestyle{notes}
+
+% Add chapter files below in the order in which they
+% should appear in the book. Do not include ".tex".
+
+\input{chapters/01-administration}
+
+% Examples:
+% \input{chapters/02-cardiovascular}
+% \input{chapters/03-respiratory}
+% \input{chapters/04-gastrointestinal}
+% \input{chapters/05-neurology}
+% \input{chapters/06-endocrinology}
+% \input{chapters/07-renal}
+% \input{chapters/08-infectious-diseases}
+% \input{chapters/09-pharmacology}
+
+% Optional organisation using parts:
+%
+% \part{Foundations}
+% \input{chapters/anatomy}
+% \input{chapters/physiology}
+%
+% \part{Systems}
+% \input{chapters/cardiovascular}
+% \input{chapters/respiratory}
+
+% -------------------------------------------------
+% Optional back matter
+% -------------------------------------------------
+
+% \backmatter
+% \input{appendices/normal-ranges}
+% \input{appendices/abbreviations}
+
+\end{document}

@@ -1,0 +1,9 @@
+\babel@toc {british}{}\relax 
+\contentsline {chapter}{Introduction}{iii}{chapter*.2}%
+\contentsline {section}{\numberline {0.1}Organisation}{iii}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Suggested chapter structure}{iii}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Formatting conventions}{iv}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Sources and maintenance}{v}{section.0.4}%
+\contentsline {chapter}{\numberline {1}Administration}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Registering with Learning@Wales}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Required training}{1}{section.1.2}%

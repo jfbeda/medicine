@@ -1,0 +1,399 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{formatting}[2026/09/02 A5 medicine handbook formatting]
+
+% -------------------------------------------------
+% Engine and fonts
+% -------------------------------------------------
+
+\RequirePackage{iftex}
+
+\ifXeTeX
+\else
+    \PackageError{formatting}
+      {This template must be compiled with XeLaTeX}
+      {Select XeLaTeX as the compiler and try again.}
+\fi
+
+\RequirePackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\IfFontExistsTF{Libertinus Serif}
+  {\setmainfont{Libertinus Serif}[Numbers={Lining,Proportional}]}
+  {\setmainfont{Latin Modern Roman}}
+
+\IfFontExistsTF{Libertinus Sans}
+  {\setsansfont{Libertinus Sans}}
+  {\setsansfont{Latin Modern Sans}}
+
+\IfFontExistsTF{JetBrains Mono}
+  {\setmonofont{JetBrains Mono}[Scale=0.85]}
+  {\setmonofont{Latin Modern Mono}[Scale=0.9]}
+
+\RequirePackage[british]{babel}
+\RequirePackage{csquotes}
+\RequirePackage[final]{microtype}
+
+% -------------------------------------------------
+% Page geometry
+% -------------------------------------------------
+
+\RequirePackage[
+    a5paper,
+    twoside,
+    inner=17mm,
+    outer=14mm,
+    top=18mm,
+    bottom=18mm,
+    bindingoffset=2mm,
+    headheight=14pt,
+    headsep=4mm,
+    footskip=9mm,
+    includeheadfoot
+]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em plus 0.1em minus 0.05em}
+\setlength{\emergencystretch}{1.5em}
+
+\linespread{1.03}
+\raggedbottom
+
+% Discourage isolated lines at the tops and bottoms of pages.
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% -------------------------------------------------
+% Colours
+% -------------------------------------------------
+
+\RequirePackage[table]{xcolor}
+
+\definecolor{MedNavy}{HTML}{17324D}
+\definecolor{MedBlue}{HTML}{246B8E}
+\definecolor{MedTeal}{HTML}{198C8C}
+\definecolor{MedGreen}{HTML}{4A8B68}
+\definecolor{MedCoral}{HTML}{C95757}
+\definecolor{MedGold}{HTML}{E5B94E}
+\definecolor{MedInk}{HTML}{242A30}
+\definecolor{MedGrey}{HTML}{65717C}
+\definecolor{MedLightGrey}{HTML}{F2F5F6}
+
+\color{MedInk}
+
+% -------------------------------------------------
+% Mathematics, scientific notation, and tables
+% -------------------------------------------------
+
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{siunitx}
+
+\sisetup{
+    detect-all,
+    per-mode=symbol,
+    range-phrase=--,
+    range-units=single
+}
+
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+
+\renewcommand{\arraystretch}{1.15}
+
+% Flexible table column types.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% -------------------------------------------------
+% Images, diagrams, and columns
+% -------------------------------------------------
+
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+\RequirePackage{multicol}
+\RequirePackage{tikz}
+
+\usetikzlibrary{
+    arrows.meta,
+    calc,
+    positioning,
+    shapes.geometric
+}
+
+\captionsetup{
+    font=small,
+    labelfont={bf,color=MedNavy},
+    textfont={color=MedInk},
+    justification=raggedright,
+    singlelinecheck=false
+}
+
+\setlength{\multicolsep}{0.5em}
+\setlength{\columnsep}{5mm}
+\setlength{\columnseprule}{0.25pt}
+\raggedcolumns
+
+% -------------------------------------------------
+% Lists
+% -------------------------------------------------
+
+\RequirePackage{enumitem}
+
+\setlist{
+    leftmargin=*,
+    itemsep=0.2em,
+    parsep=0pt,
+    topsep=0.45em
+}
+
+\setlist[itemize,1]{
+    label=\textcolor{MedTeal}{\textbullet}
+}
+
+\setlist[enumerate,1]{
+    label=\textcolor{MedNavy}{\bfseries\arabic*.}
+}
+
+\setlist[description]{
+    font=\normalfont\sffamily\bfseries\color{MedNavy}
+}
+
+% -------------------------------------------------
+% Chapter and section headings
+% -------------------------------------------------
+
+\RequirePackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\bfseries\color{MedNavy}}
+  {\large\color{MedTeal}\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {0.5ex}
+  {\huge\raggedright}
+  [\vspace{0.8ex}{\color{MedTeal}\titlerule[0.8pt]}]
+
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\sffamily\bfseries\color{MedNavy}}
+  {}
+  {0pt}
+  {\huge\raggedright}
+  [\vspace{0.8ex}{\color{MedTeal}\titlerule[0.8pt]}]
+
+\titlespacing*{\chapter}
+  {0pt}
+  {-5mm}
+  {9mm}
+
+\titleformat{\section}
+  {\normalfont\Large\sffamily\bfseries\color{MedNavy}}
+  {\thesection}
+  {0.65em}
+  {}
+
+\titlespacing*{\section}
+  {0pt}
+  {1.6em}
+  {0.5em}
+
+\titleformat{\subsection}
+  {\normalfont\large\sffamily\bfseries\color{MedBlue}}
+  {\thesubsection}
+  {0.65em}
+  {}
+
+\titlespacing*{\subsection}
+  {0pt}
+  {1.3em}
+  {0.35em}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\sffamily\bfseries\color{MedInk}}
+  {\thesubsubsection}
+  {0.65em}
+  {}
+
+\titlespacing*{\subsubsection}
+  {0pt}
+  {1em}
+  {0.25em}
+
+\titleformat{\paragraph}[runin]
+  {\normalfont\sffamily\bfseries\color{MedNavy}}
+  {}
+  {0pt}
+  {}
+  [.]
+
+\titlespacing*{\paragraph}
+  {0pt}
+  {0.8em}
+  {0.6em}
+
+% -------------------------------------------------
+% Headers and footers
+% -------------------------------------------------
+
+\RequirePackage{fancyhdr}
+\RequirePackage{emptypage}
+
+\fancypagestyle{notes}{
+    \fancyhf{}
+
+    \fancyhead[LE]{
+        \footnotesize\sffamily\color{MedGrey}
+        \nouppercase{\leftmark}
+    }
+
+    \fancyhead[RO]{
+        \footnotesize\sffamily\color{MedGrey}
+        \nouppercase{\rightmark}
+    }
+
+    \fancyfoot[LE,RO]{
+        \small\sffamily\bfseries\color{MedNavy}
+        \thepage
+    }
+
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Chapter-opening pages use a simpler footer.
+\fancypagestyle{plain}{
+    \fancyhf{}
+
+    \fancyfoot[LE,RO]{
+        \small\sffamily\bfseries\color{MedNavy}
+        \thepage
+    }
+
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% -------------------------------------------------
+% Medicine-note boxes
+% -------------------------------------------------
+
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{xparse}
+
+\tcbset{
+    medicine box/.style={
+        enhanced,
+        breakable,
+        boxrule=0.5pt,
+        arc=1mm,
+        left=2mm,
+        right=2mm,
+        top=1.5mm,
+        bottom=1.5mm,
+        before skip=0.8em,
+        after skip=0.8em,
+        fonttitle=\sffamily\bfseries
+    }
+}
+
+\NewTColorBox{chapteroverview}{ O{Chapter overview} }{
+    medicine box,
+    title={#1},
+    colback=MedLightGrey,
+    colframe=MedNavy,
+    colbacktitle=MedNavy,
+    coltitle=white
+}
+
+\NewTColorBox{keypoint}{ O{Key point} }{
+    medicine box,
+    title={#1},
+    colback=MedTeal!6,
+    colframe=MedTeal,
+    colbacktitle=MedTeal,
+    coltitle=white
+}
+
+\NewTColorBox{clinicalnote}{ O{Clinical note} }{
+    medicine box,
+    title={#1},
+    colback=MedBlue!6,
+    colframe=MedBlue,
+    colbacktitle=MedBlue,
+    coltitle=white
+}
+
+\NewTColorBox{redflag}{ O{Red flag} }{
+    medicine box,
+    title={#1},
+    colback=MedCoral!7,
+    colframe=MedCoral,
+    colbacktitle=MedCoral,
+    coltitle=white
+}
+
+\NewTColorBox{examtip}{ O{Exam tip} }{
+    medicine box,
+    title={#1},
+    colback=MedGold!12,
+    colframe=MedGold,
+    colbacktitle=MedGold,
+    coltitle=MedNavy
+}
+
+\NewTColorBox{definitionbox}{ O{Definition} }{
+    medicine box,
+    title={#1},
+    colback=MedLightGrey,
+    colframe=MedGrey,
+    colbacktitle=MedGrey,
+    coltitle=white
+}
+
+% -------------------------------------------------
+% Convenient text commands
+% -------------------------------------------------
+
+\NewDocumentCommand{\term}{m}{%
+    \textbf{\color{MedNavy}#1}%
+}
+
+\NewDocumentCommand{\drug}{m}{%
+    \textit{#1}%
+}
+
+\NewDocumentCommand{\labvalue}{m}{%
+    \textsc{#1}%
+}
+
+\NewDocumentCommand{\todo}{m}{%
+    \textcolor{MedCoral}{\textbf{TODO:} #1}%
+}
+
+\NewDocumentCommand{\lastupdated}{m}{%
+    \begin{flushright}
+        \footnotesize\sffamily\color{MedGrey}
+        Last updated: #1
+    \end{flushright}
+}
+
+% -------------------------------------------------
+% Links and references
+% -------------------------------------------------
+
+\RequirePackage{xurl}
+\RequirePackage{hyperref}
+\RequirePackage{bookmark}
+\RequirePackage[capitalise,nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=MedNavy,
+    citecolor=MedGreen,
+    urlcolor=MedBlue,
+    bookmarksnumbered=true,
+    pdfdisplaydoctitle=true
+}
+
+\endinput

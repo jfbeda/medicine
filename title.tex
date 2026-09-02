@@ -1,0 +1,106 @@
+\begin{titlepage}
+    \thispagestyle{empty}
+
+    % Full-page vector background.
+    \begin{tikzpicture}[remember picture,overlay]
+
+        \fill[MedNavy]
+            (current page.south west)
+            rectangle
+            (current page.north east);
+
+        % Subtle decorative circles.
+        \fill[MedTeal,opacity=0.18]
+            ([xshift=-12mm,yshift=-18mm]current page.north east)
+            circle[radius=40mm];
+
+        \fill[MedBlue,opacity=0.17]
+            ([xshift=5mm,yshift=4mm]current page.south west)
+            circle[radius=31mm];
+
+        \draw[
+            white,
+            opacity=0.12,
+            line width=1.2pt
+        ]
+            ([xshift=16mm,yshift=25mm]current page.south west)
+            --
+            ([xshift=-16mm,yshift=25mm]current page.south east);
+
+        % Coloured band along the bottom.
+        \fill[MedTeal]
+            (current page.south west)
+            rectangle
+            ([yshift=7mm]current page.south east);
+
+    \end{tikzpicture}
+
+    \color{white}
+
+    \vspace*{20mm}
+
+    \begin{flushleft}
+
+        % {\sffamily\bfseries\small
+        %     STUDY HANDBOOK
+        %     \par
+        % }
+
+        \vspace{8mm}
+
+        {\sffamily\bfseries\fontsize{31}{35}\selectfont
+            \booktitle
+            \par
+        }
+
+        \vspace{5mm}
+
+        {\sffamily\Large\color{white!82}
+            \booksubtitle
+            \par
+        }
+
+        \vspace{8mm}
+
+        {\color{MedTeal}\rule{36mm}{1.5pt}}
+
+    \end{flushleft}
+
+    \vfill
+
+    \begin{flushleft}
+
+        {\sffamily\large\bfseries
+            \bookauthor
+            \par
+        }
+
+        \vspace{2mm}
+
+        {\sffamily\normalsize\color{white!80}
+            \bookinstitution
+            \par
+        }
+
+        \vspace{1mm}
+
+        {\sffamily\normalsize\color{white!80}
+            \bookedition
+            \par
+        }
+
+        \vspace{12mm}
+
+        % {\sffamily\footnotesize\color{white!65}
+        %     Personal study notes. Not a substitute for current
+        %     clinical guidance or professional medical advice.
+        %     \par
+        % }
+
+    \end{flushleft}
+
+    \vspace{6mm}
+
+\end{titlepage}
+
+\color{MedInk}

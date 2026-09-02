@@ -1,0 +1,93 @@
+\chapter{Introduction}
+
+This document contains my notes from Swansea University's graduate entry medicine course.
+
+\section{Organisation}
+
+The main body of the handbook is divided into chapters. Each chapter is
+stored as a separate file inside the \texttt{chapters} folder.
+
+For example:
+
+\begin{itemize}
+    \item \texttt{chapters/02-cardiovascular.tex}
+    \item \texttt{chapters/03-respiratory.tex}
+    \item \texttt{chapters/04-gastrointestinal.tex}
+\end{itemize}
+
+The chapters are imported in the required order from
+\texttt{main.tex}. Keeping one topic in each file makes the project
+easier to edit and reduces the chance of merge conflicts when several
+people contribute.
+
+\section{Suggested chapter structure}
+
+A clinical topic might be organised under the following headings:
+
+\begin{enumerate}
+    \item definition and overview;
+    \item relevant anatomy and physiology;
+    \item aetiology and risk factors;
+    \item pathophysiology;
+    \item presentation;
+    \item investigations;
+    \item management;
+    \item complications;
+    \item prognosis and follow-up; and
+    \item key revision points.
+\end{enumerate}
+
+Not every topic will require every heading.
+
+\section{Formatting conventions}
+
+Several reusable boxes are provided by \texttt{formatting.sty}.
+
+\begin{keypoint}
+Use this box for important principles or material that should be
+remembered.
+\end{keypoint}
+
+\begin{clinicalnote}
+Use this box for clinical context, practical interpretation, or links
+between scientific knowledge and clinical practice.
+\end{clinicalnote}
+
+\begin{redflag}
+Use this box for potentially serious presentations, urgent
+considerations, or common safety errors.
+\end{redflag}
+
+\begin{examtip}
+Use this box for assessment advice, useful contrasts, and easily
+confused concepts.
+\end{examtip}
+
+\begin{definitionbox}[Example definition]
+Use this box when introducing a particularly important term or
+classification.
+\end{definitionbox}
+
+Important terms can also be written with
+\verb|\term{important term}|, producing \term{important term}.
+Generic drug names can be written with
+\verb|\drug{drug name}|, producing \drug{drug name}.
+
+\section{Sources and maintenance}
+
+Where possible, notes should identify the source and date of clinical
+recommendations. Guidance, diagnostic criteria, drug information, and
+reference ranges can change over time.
+
+Each chapter can end with a last-updated marker:
+
+\begin{verbatim}
+\lastupdated{2 September 2026}
+\end{verbatim}
+
+\begin{redflag}[Appropriate use]
+These notes must not contain patient-identifiable information. They are
+not a substitute for local protocols, current clinical guidelines,
+formal prescribing resources, or advice from an appropriately
+qualified professional.
+\end{redflag}
