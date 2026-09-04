@@ -5,5 +5,12 @@
 \contentsline {section}{\numberline {0.3}Formatting conventions}{iv}{section.0.3}%
 \contentsline {section}{\numberline {0.4}Sources and maintenance}{v}{section.0.4}%
 \contentsline {chapter}{\numberline {1}Administration}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Registering with Learning@Wales}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Required training}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.1}Important links}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Registering with Learning@Wales}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Required training}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Canvas training}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Resources}{2}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Anatomy}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}2026-09-03}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Anatomical directional terms}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Anatomical rotational terms}{3}{subsection.2.1.2}%

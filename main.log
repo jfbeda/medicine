@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  2 SEP 2026 16:06
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  4 SEP 2026 08:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1243,23 +1243,37 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ] (./chapters/01-administration.tex
 Chapter 1.
-)
+
+Package enumitem Warning: Negative labelwidth. This does not make much
+(enumitem)                sense, on input line 10.
+
+
 
 [1
 
-] (./main.aux)
+]) (./chapters/02-anatomy.tex
+
+[2]
+Chapter 2.
+
+
+[3
+
+])
+
+[4] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 42765 strings out of 473832
- 948380 string characters out of 5729482
+ 42833 strings out of 473832
+ 949790 string characters out of 5729482
  1461676 words of memory out of 5000000
- 65203 multiletter control sequences out of 15000+600000
- 561280 words of font info for 93 fonts, out of 8000000 for 9000
+ 65258 multiletter control sequences out of 15000+600000
+ 564404 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,12n,110p,1028b,1151s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (7 pages).
+Output written on main.pdf (10 pages).
