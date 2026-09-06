@@ -3,9 +3,17 @@
 \documentclass[
     10pt,
     a5paper,
-    twoside,
+    oneside,
     openany
 ]{book}
+
+% -------------------------------------------------
+% Formatting
+% -------------------------------------------------
+
+% \usepackage[blue]{formatting}
+\usepackage[blue]{formatting}
+
 
 % -------------------------------------------------
 % Book information
@@ -17,11 +25,13 @@
 \newcommand{\bookinstitution}{}
 \newcommand{\bookedition}{Compiled \today}
 
-% -------------------------------------------------
-% Formatting
-% -------------------------------------------------
+% \newcommand{\centredurl}[1]{%
+%     \par\smallskip
+%     {\centering\url{#1}\par}%
+%     \smallskip
+% }
 
-\usepackage{formatting}
+
 
 \hypersetup{
     pdftitle={\booktitle},
@@ -55,7 +65,7 @@
 \tableofcontents
 
 \clearpage
-\input{chapters/00-introduction}
+\input{chapters/introduction}
 
 % -------------------------------------------------
 % Main chapters
@@ -67,8 +77,10 @@
 % Add chapter files below in the order in which they
 % should appear in the book. Do not include ".tex".
 
-\input{chapters/01-administration}
-\input{chapters/02-anatomy}
+\input{chapters/administration}
+\input{chapters/important_links}
+\input{chapters/anatomy}
+\input{chapters/diarrhea}
 
 % Examples:
 % \input{chapters/02-cardiovascular}

@@ -1,34 +1,35 @@
 \begin{titlepage}
     \thispagestyle{empty}
 
-    % Full-page vector background.
     \begin{tikzpicture}[remember picture,overlay]
 
-        \fill[MedNavy]
+        % Full-page primary-colour background.
+        \fill[PrimaryColor]
             (current page.south west)
             rectangle
             (current page.north east);
 
-        % Subtle decorative circles.
-        \fill[MedTeal,opacity=0.18]
+        % Decorative accent circles.
+        \fill[AccentColor,opacity=0.28]
             ([xshift=-12mm,yshift=-18mm]current page.north east)
             circle[radius=40mm];
 
-        \fill[MedBlue,opacity=0.17]
+        \fill[SoftAccentColor,opacity=0.15]
             ([xshift=5mm,yshift=4mm]current page.south west)
             circle[radius=31mm];
 
+        % Subtle horizontal divider.
         \draw[
             white,
-            opacity=0.12,
+            opacity=0.14,
             line width=1.2pt
         ]
             ([xshift=16mm,yshift=25mm]current page.south west)
             --
             ([xshift=-16mm,yshift=25mm]current page.south east);
 
-        % Coloured band along the bottom.
-        \fill[MedTeal]
+        % Accent-colour band along the bottom.
+        \fill[AccentColor]
             (current page.south west)
             rectangle
             ([yshift=7mm]current page.south east);
@@ -40,11 +41,6 @@
     \vspace*{20mm}
 
     \begin{flushleft}
-
-        % {\sffamily\bfseries\small
-        %     STUDY HANDBOOK
-        %     \par
-        % }
 
         \vspace{8mm}
 
@@ -62,7 +58,7 @@
 
         \vspace{8mm}
 
-        {\color{MedTeal}\rule{36mm}{1.5pt}}
+        {\color{AccentColor}\rule{36mm}{1.5pt}}
 
     \end{flushleft}
 
@@ -91,16 +87,10 @@
 
         \vspace{12mm}
 
-        % {\sffamily\footnotesize\color{white!65}
-        %     Personal study notes. Not a substitute for current
-        %     clinical guidance or professional medical advice.
-        %     \par
-        % }
-
     \end{flushleft}
 
     \vspace{6mm}
 
 \end{titlepage}
 
-\color{MedInk}
+\normalcolor
