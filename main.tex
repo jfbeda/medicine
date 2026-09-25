@@ -13,7 +13,28 @@
 
 % \usepackage[blue]{formatting}
 \usepackage[blue]{formatting}
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+
+
+\usepackage[
+  backend=biber,
+  style=nature,
+  sorting=none,
+  doi=true,
+  url=true,
+  isbn=false,
+  giveninits=true,
+  maxnames=6,
+  minnames=1,
+  date=year
+]{biblatex}
+
+
+\addbibresource{bibliography.bib}
 
 % -------------------------------------------------
 % Book information
@@ -113,5 +134,9 @@
 % \backmatter
 % \input{appendices/normal-ranges}
 % \input{appendices/abbreviations}
+
+\clearpage
+\printbibliography[heading=bibintoc,title={Bibliography}]
+
 
 \end{document}
